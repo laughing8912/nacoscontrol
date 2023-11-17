@@ -39,7 +39,10 @@ python nacoscontrol/main.py -sname service-xxx -i xx.xx.xx.xx -p xxxx -cm monito
 python nacoscontrol/main.py -sname service-xxx -i xx.xx.xx.xx -p xxxx -cm monitorup
 ```
 #### 工具集成示例
-- 前置条件:<font color=red>nacos迭代到2.1.3之后，Java微服务启动后不会在nacos中改变执行下线操作时设置的结果。如果Java微服务程序启动后未告知nacos服务已上线，则需启用本程序的监听功能以佐证微服务进程能正常提供服务，获取到接口结果后(本程序获取的结果忽略了返回的值UP/DOWN，有结果则认为微服务程序能正常提供服务，否则认为微服务程序还未启动成功)，由本程序执行上线操作，从而达到滚动更新效果。</font>
+- 前置条件
+
+<font color=red>nacos迭代到2.1.3之后，Java微服务启动后不会在nacos中改变执行下线操作时设置的结果。如果Java微服务程序启动后未告知nacos服务已上线，则需启用本程序的监听功能以佐证微服务进程能正常提供服务，获取到接口结果后(本程序获取的结果忽略了返回的值UP/DOWN，有结果则认为微服务程序能正常提供服务，否则认为微服务程序还未启动成功)，由本程序执行上线操作，从而达到滚动更新效果。</font>
+
 - jenkins关键代码
 ```groovy
 script {
